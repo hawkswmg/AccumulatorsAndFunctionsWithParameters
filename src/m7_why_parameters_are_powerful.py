@@ -13,7 +13,7 @@ def main():
     run_test_draw_circles()
     # Un-comment the next lines when you are ready to use them.
     run_test_better_draw_circles()
-    # run_test_even_better_draw_circles()
+    run_test_even_better_draw_circles()
 
 
 # ----------------------------------------------------------------------
@@ -64,7 +64,7 @@ def draw_circles():
     window.close_on_mouse_click()
 
 # ----------------------------------------------------------------------
-# TODO: 2.
+# DONE: 2.
 #   First, RUN this program.  You will see that draw_circles draws
 #   concentric circles whose radii vary by 10.
 #
@@ -99,12 +99,13 @@ def run_test_better_draw_circles():
     print('testing better_draw_circles')
     print('----------------------------')
     print()
-    better_draw_circles(20)
+    better_draw_circles(7)
+
 
 
 def better_draw_circles(n):
     window = rg. RoseWindow(500,500)
-    for k in range(21):
+    for k in range(30):
         circle = rg.Circle(rg.Point(250,250),n * k)
         circle.attach_to(window)
         window.render(0.02)
@@ -112,7 +113,7 @@ def better_draw_circles(n):
 
 
 # ----------------------------------------------------------------------
-# TODO: 3.
+# DONE: 3.
 #   In the previous exercise, you made a MORE POWERFUL version
 #   of draw_circles by introducing a PARAMETER for the amount by
 #   which the radii of the concentric circles increase.
@@ -139,6 +140,26 @@ def better_draw_circles(n):
 #   In testing your even_better_draw_circles function,
 #   can you make some fun pictures?
 # ----------------------------------------------------------------------
+
+def run_test_even_better_draw_circles():
+    print()
+    print('----------------------------')
+    print('testing even_better_draw_circles')
+    print('----------------------------')
+    print()
+    draw_even_better_circles(12,30,'red')
+
+def draw_even_better_circles(n,g,f):
+    window = rg.RoseWindow(500, 500)
+    for k in range(g):
+        circle = rg.Circle(rg.Point(250, 250), n * k)
+        circle.outline_color = f
+        circle.attach_to(window)
+        window.render(0.02)
+    window.close_on_mouse_click()
+
+
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
