@@ -23,6 +23,7 @@ def main():
     print_sequence3()
     draw_circles3()
     print_cosines()
+    draw_cosines_and_sines()
 
 def print_sequence1():
     """
@@ -244,7 +245,7 @@ def draw_cosines_and_sines():
     -- Waits for the user to press the mouse, then closes the window.
     """
     # ------------------------------------------------------------------
-    # TODO: 9. Implement this function, per its doc-string above.
+    # DONE: 9. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # ------------------------------------------------------------------
@@ -254,7 +255,15 @@ def draw_cosines_and_sines():
     print('--------------------------------------------------')
     print()
 
-    window = rg.RoseWindow(400,400)
+    window = rg.RoseWindow(400, 400)
+    for k in range(101):
+        dx = 80 * math.cos(k)
+        dy = 80 * math.sin(k)
+        circle = rg.Circle(rg.Point(200 + dx,200 + dy), 10)
+        circle.attach_to(window)
+        window.render(0.02)
+
+    window.close_on_mouse_click()
 
 
 # ----------------------------------------------------------------------
